@@ -1,11 +1,14 @@
-import cart from "./assets/306793.svg"
 import "./style-CartWidget.css"
+import Image from 'react-bootstrap/Image';
+import Icono from "./assets/carritocompra.svg"
+
+
 
 const CartWidget = () => {
     return (
-        <div>
-            <img src={cart} alt="" className="cart-widget" />
-            0
+        <div className="container d-flex">
+            <Image src={Icono} fluid className="cart-widget" />
+            <div>0</div>
         </div>
     )
 }

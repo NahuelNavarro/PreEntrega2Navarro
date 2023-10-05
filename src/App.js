@@ -1,18 +1,25 @@
 import './App.css';
-import NavBar from './components/NavBar/NavBar';
+import Layout from './components/layout/layout';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import Cards from './components/Card/Cards';
-import Card from './components/Card/Card';
+import ListaCards from './components/ListaCards/ListaCards';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import ProductoFiltrado from './components/ListaCards/ProductoFiltrado';
+import Prueba from './components/NavBar/prueba';
+import CardDetalle from './components/Card/CardDetalle';
 
 function App() {
   return (
-    <div className="App">
-      <NavBar/>
-      <ItemListContainer greeting={"Bienvenidos"}/>
-      <Cards/>
-      
-     
-    </div>
+    <BrowserRouter>
+       <Layout>
+        <Routes>
+          <Route path='/' element={<ListaCards/>}/>
+          <Route path='/ProductoFiltrado/:title' element={<ProductoFiltrado/>}/>
+          <Route path='/DetalleProducto/:id' element={<CardDetalle/>}/>
+
+        </Routes>
+      </Layout>
+    </BrowserRouter>
+   
   );
 }
 
