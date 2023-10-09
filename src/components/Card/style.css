@@ -1,5 +1,5 @@
 .size-img{
-    height: 220px;
+    height: 300px;
     width: 100%;
 
 }
@@ -13,6 +13,14 @@
     gap: 5px;
 }
 
- .h5 {
-    font-size: 15px;
+.titulo  {
+    font-size: 16px;
 }
+
+.descripcion{
+    font-size: 12px;
+}
+.precio{
+    font-size: 20px;
+}
+

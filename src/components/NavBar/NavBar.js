@@ -5,10 +5,13 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from "react-router-dom";  
 import 'bootstrap/dist/css/bootstrap.min.css';
+import React,{useContext} from "react";
+import { ColeccionContext } from "../../context/ColeccionContext";
 
 
 
 const NavBar = () => {
+
   return (
     <Navbar expand="lg" className="bg-body-tertiary" bg="dark" data-bs-theme="dark" >
       <Container>

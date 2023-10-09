@@ -12,11 +12,11 @@ export default function Cards({producto}) {
     };
   return (
     <div>
-      <Card style={{ width: '15rem'}}>
+      <Card style={{ width: '18rem'}}>
         <Card.Img className='size-img' variant="top" src={producto.image} />
         <Card.Body>
-          <Card.Title >{producto.title}</Card.Title>
-          <Card.Title>${producto.price}</Card.Title>
+          <Card.Title className='titulo' >{producto.title}</Card.Title>
+          <Card.Title className='precio'>${producto.price}</Card.Title>
           <Button id ={`${producto.id}`} onClick={handleClick} variant="secondary">Detalle</Button>
         </Card.Body>
       </Card>
