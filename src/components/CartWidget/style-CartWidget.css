@@ -2,3 +2,24 @@
     width: 30px;
     padding-right: 5px;
 }
+
+.contenedorProducto{
+ 
+z-index: 1000000000;
+display: block;}
+
+
+
+.img-float{
+    width: 50px;
+}
+
+.contenedor-float{
+    z-index: 10000000;
+    position: absolute;
+    padding-left: 80px;
+    width: 350px;
+  
+
+}
+

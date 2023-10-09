@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-export default function CardDetalle({producto}) {
+export default function CardDetalle({}) {
   const {coleccion, setColeccion} = useContext(ColeccionContext)
   const [Filtrado, setFiltro] = useState([])
   const { id } = useParams()
@@ -23,10 +23,10 @@ export default function CardDetalle({producto}) {
   }, [id])
 
 
-  const agregarCarrito = () => {
-    coleccion.push(Filtrado)
-    console.log(coleccion)
-    };
+    const agregarCarrito = () => {
+      setColeccion([...coleccion, Filtrado])
+          };
+    
 
 
   return (
@@ -38,8 +38,7 @@ export default function CardDetalle({producto}) {
             <Card.Title className='titulo'>{Filtrado.title}</Card.Title>
             <Card.Title className='descripcion'>{Filtrado.description}</Card.Title>
             <Card.Title className='precio'>${Filtrado.price}</Card.Title>
-            <Button variant="secondary"  funcion={()=> setColeccion(Filtrado)} >Agregar a carrito</Button>
-            <button onClick={agregarCarrito} >Agregar1</button>
+            <Button variant="secondary" onClick= {agregarCarrito}>Agregar a carrito</Button>
           </Card.Body>
         </Card>
       </div>
