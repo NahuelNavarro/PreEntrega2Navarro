@@ -1,7 +1,11 @@
 .size-img{
-    height: 300px;
+    height: 250px;
     width: 100%;
 
+}
+.size-img-resumen{
+    height: 70px;
+    width: 70px;
 }
 
 .container-box{
@@ -15,6 +19,7 @@
 
 .titulo  {
     font-size: 16px;
+    word-break:normal;
 }
 
 .descripcion{
@@ -28,3 +33,17 @@
 .cart{
     width: 39px;
     height: 38px;}
+
+.contenedor-float{
+        position: absolute;
+        margin-left: 50px;
+        width: 350px;
+        z-index: 1000;
+        height: 350px;
+        background: rgba(0, 0, 0, 0.925);
+        width: 350px;
+    
+    }
+    
+    
+    

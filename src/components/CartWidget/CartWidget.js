@@ -2,50 +2,51 @@ import "./style-CartWidget.css"
 import Image from 'react-bootstrap/Image';
 import Icono from "./assets/carritocompra.svg"
 import { ColeccionContext } from "../../context/ColeccionContext";
-import React, { createElement, useContext } from "react";
+import React, { createElement, useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import CarritoFloat from "../Card/CarritoFloat";
+import CardDetalle from "../Card/CardDetalle";
+
 
 
 
 const CartWidget = () => {
     const { coleccion, setColeccion } = useContext(ColeccionContext)
-
-    function mostrarCarrito() {
-        if(coleccion.length >=1){        const contenedorProductos = document.querySelector(".contenedorProducto");
-        contenedorProductos.innerHTML = "";
-    
-        coleccion.forEach(producto => {
-            
-            const div = document.createElement("tr");
-            div.innerHTML = `
-            <tr>
-                <th scope="row"><img src="${producto.image}" class="img-float" alt=""></th>
-                <td>${producto.title}</td>
-                <td>$${producto.price}</td>   
-                <td ><button>X</button></td>   
-
-            </tr>
-            `;
-            contenedorProductos.appendChild(div);
-        });
-        }
-
-    };
+    useEffect(() => {
+    }, [coleccion])
 
 
+    /*function mostrarCarrito() {
+        coleccion.length>=1?document.getElementById("contenedor-float").style.display = "block":document.getElementById("contenedor-float").style.display = "none"
+    }
+
+    function ocultarCarrito() {
+        document.getElementById("contenedor-float").style.display = "none"
+    }*/
+
+    const [mostrarCarrito, setMostrarCarrito] = useState(true)
+
+    const mostrarCarritoFuncion = () => {
+
+        coleccion.length>=1?setMostrarCarrito(!mostrarCarrito): setMostrarCarrito(mostrarCarrito)
+    }
+
+    const ocultarCarritoFuncion = () =>{
+        setMostrarCarrito(true)
+    }
 
 
     return (
         <div className="container d-flex">
-            <Image onMouseOver={mostrarCarrito()} src={Icono} fluid className="cart-widget" />
+            <Link to="/ResumenProductos" ><Image onMouseOver={mostrarCarritoFuncion} onMouseOut={ocultarCarritoFuncion} /*onMouseOut={ocultarCarrito}*/ src={Icono} fluid className="cart-widget" /></Link>
             <div>{coleccion.length}</div>
-            <div className="contenedor-float" >
-                <div class="carrito">
-                    <table class="table table-sm table-dark">
-                        <tbody className="contenedorProducto">
-                        </tbody>
-                    </table>
-                </div>
+            <div className="contenedor-float" id="contenedor-float" style={mostrarCarrito?{display:"none"}:{display:"block "}}>
+                <p>Bienvenido</p>
+                {coleccion.map((elm) => {
+                    return <CarritoFloat producto={elm} />
+                })}
             </div>
+
         </div>
     )
 

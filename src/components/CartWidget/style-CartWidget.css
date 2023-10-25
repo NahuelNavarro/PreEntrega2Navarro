@@ -3,10 +3,7 @@
     padding-right: 5px;
 }
 
-.contenedorProducto{
- 
-z-index: 1000000000;
-display: block;}
+
 
 
 
@@ -14,12 +11,14 @@ display: block;}
     width: 50px;
 }
 
+
 .contenedor-float{
-    z-index: 10000000;
     position: absolute;
-    padding-left: 80px;
+    margin-left: 50px;
     width: 350px;
-  
+    z-index: 1000;
+    height: 350px;
+    background: rgba(0, 0, 0, 0.418);
+    width: 350px;
 
 }
-

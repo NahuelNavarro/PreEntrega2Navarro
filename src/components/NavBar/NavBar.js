@@ -25,8 +25,7 @@ const NavBar = () => {
               <NavDropdown.Item href="#action/3.3"><Link to="/ProductoFiltrado/men's clothing" style={{ textDecoration: 'none' }}>men's clothing</Link></NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3"><Link to="/ProductoFiltrado/women's clothing" style={{ textDecoration: 'none' }}>women's clothing</Link></NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
+              <NavDropdown.Item href="#action/3.4" >
               </NavDropdown.Item>
             </NavDropdown>
             <Nav.Link href="#link"><CartWidget /></Nav.Link>

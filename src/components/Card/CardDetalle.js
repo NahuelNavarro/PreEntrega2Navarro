@@ -6,9 +6,12 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 export default function CardDetalle({}) {
-  const {coleccion, setColeccion} = useContext(ColeccionContext)
+  const {coleccion, setColeccion} = useContext(ColeccionContext, localStorage.getItem("Carrito")
+  )
   const [Filtrado, setFiltro] = useState([])
   const { id } = useParams()
+ 
+
 
 
 
@@ -23,11 +26,20 @@ export default function CardDetalle({}) {
   }, [id])
 
 
-    const agregarCarrito = () => {
-      setColeccion([...coleccion, Filtrado])
-          };
-    
 
+    const agregarCarrito = () => {
+
+      setColeccion([...coleccion, Filtrado])
+
+
+          };
+      
+      localStorage.setItem("Carrito", JSON.stringify(coleccion))
+
+      
+
+
+    
 
   return (
     <div className='container-box '>
@@ -38,7 +50,7 @@ export default function CardDetalle({}) {
             <Card.Title className='titulo'>{Filtrado.title}</Card.Title>
             <Card.Title className='descripcion'>{Filtrado.description}</Card.Title>
             <Card.Title className='precio'>${Filtrado.price}</Card.Title>
-            <Button variant="secondary" onClick= {agregarCarrito}>Agregar a carrito</Button>
+            <Button variant="secondary" onClick= {agregarCarrito} >Agregar a carrito</Button>
           </Card.Body>
         </Card>
       </div>
