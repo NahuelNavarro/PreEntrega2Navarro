@@ -1,8 +1,9 @@
 import React from 'react'
 import { useState,useEffect } from 'react'
 import CardsCategoria from '../Card/CardsCategoria'
-import Cards from '../Card/Cards'
 import { useParams } from 'react-router-dom'
+import {collection, getDocs} from "firebase/firestore"
+import {db} from "../firebase/config";
 
 export default function ListaCards() {
 
@@ -10,17 +11,26 @@ export default function ListaCards() {
     const {title} = useParams()
 
 
-    const llamada = () => {
-        fetch(`https://fakestoreapi.com/products?${title}`)
-        .then(res => res.json())
-        .then(respuesta => setCategorias(respuesta))
-        .catch(err => console.log("ERROR", err))
-    }
+
       useEffect(()=>{
-          llamada()
-      },[title])
+        const productosRef = collection (db,"productos");
+        getDocs(productosRef)
+        .then ((resp)=>{
+            
+
+            setCategorias(
+                
+                resp.docs.map((doc)=>{
+                return {...doc.data(), id: doc.id}
+            }))
+
+        })
+    },[title])
+
+      
       
       return (
+
         <div className='container-box '>
             {Categorias.map((elm)=>{
             return <CardsCategoria producto1={elm}/> 

@@ -1,9 +1,9 @@
 import React, {useContext} from 'react';
 import { useState, useEffect} from 'react'
-import { ColeccionContext } from '../../context/ColeccionContext';
 import { useParams } from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { ColeccionContext } from '../../context/ColeccionContext';
 
 export default function CardDetalle({}) {
   const {coleccion, setColeccion} = useContext(ColeccionContext, localStorage.getItem("Carrito")
@@ -11,9 +11,6 @@ export default function CardDetalle({}) {
   const [Filtrado, setFiltro] = useState([])
   const { id } = useParams()
  
-
-
-
 
   const llamada = () => {
     fetch(`https://fakestoreapi.com/products/${id}`)
@@ -25,18 +22,17 @@ export default function CardDetalle({}) {
     llamada()
   }, [id])
 
-
+  useEffect(()=>{
+    localStorage.setItem('Carrito', JSON.stringify(coleccion))
+    },[coleccion])
 
     const agregarCarrito = () => {
 
-      setColeccion([...coleccion, Filtrado])
+      setColeccion( [...coleccion,{Filtrado,cantidad:1} ])
+
 
 
           };
-      
-      localStorage.setItem("Carrito", JSON.stringify(coleccion))
-
-      
 
 
     

@@ -4,10 +4,9 @@ import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ListaCards from './components/ListaCards/ListaCards';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ProductoFiltrado from './components/ListaCards/ProductoFiltrado';
-import Prueba from './components/NavBar/prueba';
-import CardDetalle from './components/Card/CardDetalle';
 import ContextProvider from './components/ContextProvider/ContextProvider';
 import ResumenProductos from './components/ResumenProductos/ResumenProductos';
+import CardDetalle from './components/ItemDetail/CardDetalle';
 
 function App() {
 
@@ -15,6 +14,7 @@ function App() {
     <ContextProvider>
       <BrowserRouter>
         <Layout>
+          <ItemListContainer greeting={"Bienvenidos"}/>
           <Routes>
             <Route path='/' element={<ListaCards/>} />
             <Route path='/ProductoFiltrado/:title' element={<ProductoFiltrado/>} />

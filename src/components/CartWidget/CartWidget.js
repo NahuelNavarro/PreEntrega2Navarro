@@ -5,8 +5,6 @@ import { ColeccionContext } from "../../context/ColeccionContext";
 import React, { createElement, useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import CarritoFloat from "../Card/CarritoFloat";
-import CardDetalle from "../Card/CardDetalle";
-
 
 
 

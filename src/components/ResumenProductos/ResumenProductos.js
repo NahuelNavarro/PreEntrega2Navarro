@@ -13,8 +13,24 @@ export default function ResumenProductos() {
     useEffect(() => {
       }, [coleccion])
 
+      const [suma,setSuma] = useState()
+
+      const sumarTotal = () => {
+        const buscar= coleccion.map(x=>x.cantidad )
+       
+        
+            };
+
+      useEffect(() => {
+        sumarTotal()
+      }, [suma])
+
+
   return (
+
     <div className='container-box '>
+          <div>Total${suma}</div>
+
           
     <Table striped bordered hover>
     <thead>
@@ -33,7 +49,7 @@ export default function ResumenProductos() {
     </tbody>
   </Table>
     </div>
-    
+   
     
     )
   

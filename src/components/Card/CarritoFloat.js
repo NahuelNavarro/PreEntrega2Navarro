@@ -11,7 +11,6 @@ export default function CarritoFloat({producto}) {
 
     const { coleccion, setColeccion } = useContext(ColeccionContext)
     useEffect(() => {
-    console.log(coleccion)
     }, [coleccion])
 
 
@@ -21,8 +20,8 @@ export default function CarritoFloat({producto}) {
    
       <tbody>
         <tr>
-          <td>{producto.title}</td>
-          <td>${producto.price}</td>
+          <td>{producto.Filtrado.title}</td>
+          <td>${producto.Filtrado.price}</td>
         </tr>
       </tbody>
       
