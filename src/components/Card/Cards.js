@@ -12,7 +12,7 @@ export default function Cards({producto}) {
     };
   return (
     <div>
-      <Card style={{ width: '18rem'}}>
+      <Card style={{ width: '15rem'}}>
         <Card.Img className='size-img' variant="top" src={producto.image} />
         <Card.Body>
           <Card.Title className='titulo' >{producto.title}</Card.Title>
