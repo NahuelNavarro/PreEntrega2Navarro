@@ -7,6 +7,8 @@ import ProductoFiltrado from './components/ListaCards/ProductoFiltrado';
 import ContextProvider from './components/ContextProvider/ContextProvider';
 import ResumenProductos from './components/ResumenProductos/ResumenProductos';
 import CardDetalle from './components/ItemDetail/CardDetalle';
+import FinalizarCompra from './components/FinalizarCompra/FinalizarCompra';
+import FinalizarCompraFinal from './components/FinalizarCompra/FinalizarCompraFinal';
 
 function App() {
 
@@ -20,6 +22,8 @@ function App() {
             <Route path='/ProductoFiltrado/:title' element={<ProductoFiltrado/>} />
             <Route path='/DetalleProducto/:id' element={<CardDetalle/>} />
             <Route path='/ResumenProductos' element={<ResumenProductos/>}/>
+            <Route path='/FinalizarCompra' element={<FinalizarCompra/>}/>
+            <Route path='/FinalizarCompraFinal' element={<FinalizarCompraFinal/>}/>
           </Routes>
         </Layout>
       </BrowserRouter>

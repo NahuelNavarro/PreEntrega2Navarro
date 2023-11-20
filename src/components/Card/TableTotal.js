@@ -11,15 +11,18 @@ export default function TableTotal({producto}) {
 
   const [cantidad,setCantidad] = useState(producto.cantidad)
 
-  const incrementarProducto = () => {
-    setCantidad(producto.cantidad++)
-  };
+
 
   const decrementarProducto = () => {
-    setCantidad(producto.cantidad--)
+    producto.cantidad < 1? alert("Debe elegir aunquesea uno"):
+    setCantidad(producto.cantidad-- - 1)
   };
 
-  console.log(coleccion)
+  const incrementarProducto = () => {
+    
+    setCantidad(producto.cantidad++ + 1)
+  };
+
   
   useEffect(() => {
   }, [producto])

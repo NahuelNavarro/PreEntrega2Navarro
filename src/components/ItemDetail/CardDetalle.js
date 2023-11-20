@@ -23,20 +23,14 @@ export default function CardDetalle({}) {
   }, [id])
 
   useEffect(()=>{
-    localStorage.setItem('Carrito', JSON.stringify(coleccion))
+    localStorage.setItem('Carrito',JSON.stringify(coleccion))
     },[coleccion])
 
     const agregarCarrito = () => {
-
-      setColeccion( [...coleccion,{Filtrado,cantidad:1} ])
-
-
-
-          };
-
-
-    
-
+      
+      setColeccion( [...coleccion,{Filtrado,cantidad:+1} ])
+    }
+    
   return (
     <div className='container-box '>
       <div className='container-box '>

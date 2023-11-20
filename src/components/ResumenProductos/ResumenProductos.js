@@ -3,12 +3,13 @@ import { ColeccionContext } from "../../context/ColeccionContext";
 import {useContext,useEffect,useState} from 'react';
 import TableTotal from '../Card/TableTotal';
 import Table from 'react-bootstrap/Table';
+import { Link } from 'react-router-dom';
 
 
 
 export default function ResumenProductos() {
     const { coleccion, setColeccion } = useContext(ColeccionContext)
-
+  
 
     useEffect(() => {
       }, [coleccion])
@@ -16,22 +17,22 @@ export default function ResumenProductos() {
       const [suma,setSuma] = useState()
 
       const sumarTotal = () => {
-        const buscar= coleccion.map(x=>x.cantidad )
-       
-        
-            };
+     };
 
       useEffect(() => {
         sumarTotal()
       }, [suma])
 
 
+
+      const finalizarCompra = () => {
+              }
+
   return (
 
     <div className='container-box '>
           <div>Total${suma}</div>
-
-          
+       
     <Table striped bordered hover>
     <thead>
       <tr>
@@ -48,7 +49,10 @@ export default function ResumenProductos() {
       
     </tbody>
   </Table>
+  <Link to= "/FinalizarCompra" variant="secondary"  onClick={finalizarCompra} ><button>Finalizar compra</button></Link>
+
     </div>
+    
    
     
     )

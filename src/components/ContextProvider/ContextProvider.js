@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 export default function ContextProvider({children}) {
     const [coleccion,setColeccion]=useState([])
-    const productosLocalStorage = JSON.parse(localStorage.getItem('Carrito') )|| []
+    const productosLocalStorage = JSON.stringify(localStorage.getItem('Carrito') )|| []
 
 
 
