@@ -17,12 +17,18 @@ export default function ResumenProductos() {
       const [suma,setSuma] = useState()
 
       const sumarTotal = () => {
+
+        const sumar = coleccion.map ((x)=> x.cantidad * x.Filtrado.price).reduce((a,c)=>a+c,0)
+
+
+        setSuma(sumar)
+
      };
 
       useEffect(() => {
         sumarTotal()
       }, [suma])
-
+      
 
 
       const finalizarCompra = () => {

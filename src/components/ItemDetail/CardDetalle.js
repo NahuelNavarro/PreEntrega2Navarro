@@ -28,9 +28,14 @@ export default function CardDetalle({}) {
 
     const agregarCarrito = () => {
       
+      
+
       setColeccion( [...coleccion,{Filtrado,cantidad:+1} ])
+
+     
     }
-    
+
+
   return (
     <div className='container-box '>
       <div className='container-box '>
